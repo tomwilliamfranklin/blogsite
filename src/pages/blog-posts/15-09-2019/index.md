@@ -1,7 +1,8 @@
 ---
 path: '/first-post'
 title: 'First Blog Post'
-date: "1450-01-01T00:00:00.000Z"
+date: "2018-11-07"
+published: true
 ---
 
 #Hello! 

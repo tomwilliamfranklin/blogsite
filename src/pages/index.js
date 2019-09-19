@@ -1,27 +1,19 @@
 import React from "react"
 import { Link } from "gatsby"
-
 import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+
 
 const IndexPage = ({data}) => (
   <Layout>
-    <SEO title="Home" />
     <h1>My Blog</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-
-      <ul>
-      {data.allMarkdownRemark.edges.map(post => (
-       <li>
-         <Link key={post.node.id} href={post.node.frontmatter.path}> 
-        {post.node.frontmatter.title}   {post.node.frontmatter.date}
-        </Link>
-        </li> 
-      ))}
-      </ul> 
-    <Link to="/page-2/">Go to page 2</Link>
+      <div class="blog-post-list">
+        {data.allMarkdownRemark.edges.map(post => (
+          <Link class="blog-post-item" key={post.node.id} to={post.node.frontmatter.path}> 
+              <h2> {post.node.frontmatter.title}</h2>
+              <h2> {post.node.frontmatter.date} </h2>
+          </Link>
+        ))}
+      </div>
   </Layout>
 )
 

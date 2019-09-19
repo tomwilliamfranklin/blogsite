@@ -2,14 +2,16 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import Layout from "../../components/layout"
 
-export default function Template({ data }) {
-    const {markdownRemark: post} = data;
+export default function Template({ data: {markdownRemark} }) {
+    const {frontmatter, html} = markdownRemark;
     //const post = data.markdownRemark;
     return (
         <Layout>
             <div> 
-                <h1>{post.frontmatter.title}</h1>   
-                <div dangerouslySetInnerHTML={{__html: post.html}}/> 
+                <Helmet title={frontmatter.title}/>
+                <img></img>
+                <h2> {frontmatter.title} </h2>
+                <div dangerouslySetInnerHTML={{__html: html}}/> 
             </div>
         </Layout>
     )

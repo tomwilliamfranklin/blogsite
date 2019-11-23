@@ -8,10 +8,10 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-
-import Header from "./header"
 import "./layout.scss"
-import AboutPage from "./aboutpage"
+import Helmet from "react-helmet"
+import { withPrefix, Link } from "gatsby"
+import Header from "../components/header"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -26,25 +26,27 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <AboutPage />
-      <div class="mainContainer">
-        <div class="mainContainerInner">
+    <Helmet>
+    <script src="https://kit.fontawesome.com/15be33f2fc.js" crossorigin="anonymous"></script>
+    <script src={withPrefix('jquery.min.js')}  type="text/javascript" ></script>
+    <script src={withPrefix('fancycanvas.js')}  type="text/javascript" ></script>
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet"></link>
+    </Helmet>
+    <Header></Header>
+     <div class="mainContainer">
         <main class="main">
-          <div>           
-          </div>
           {children}
-        </main>  
-        </div>         
-        
-        <footer class="footer">
+        </main>       
+      </div>
+
+      <footer class="footer">
           <div class="footer-inner">
           © {new Date().getFullYear()}, Built with
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
           </div>
         </footer>
-      </div>
+
     </>
   )
 }

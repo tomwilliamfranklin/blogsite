@@ -1,2 +1,2 @@
 # blogsite
- My personal blog webiste
+ My personal blog website

@@ -7,7 +7,7 @@ const AboutImage = () => {
     query {
       placeholderImage: file(relativePath: { eq: "me-walking-in-the-park.jpg" }) {
         childImageSharp {
-          fluid(maxHeight: 5000) {
+          fluid(quality: 100 maxHeight: 1000) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -15,7 +15,7 @@ const AboutImage = () => {
     }
   `)
 
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} class="about-image"/>
+  return <div style={{display: 'flex',justifyContent: 'center'}}><Img style={{height:'auto', width:'100%'}} class="ImageContainer" fluid={data.placeholderImage.childImageSharp.fluid} class="about-image"/></div>
 }
 
 export default AboutImage

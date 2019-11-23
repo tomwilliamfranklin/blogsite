@@ -4,9 +4,11 @@ import React from "react"
 
 const Header = ({ siteTitle }) => (
   <header class="header">
-    <button> About Me </button>
-    <button> Portfolio </button>
-    <button> Blog </button>
+    <div class="header-inner">
+    <a><span class="navigation-button">About Me</span></a>
+    <a><span class="navigation-button">Portfolio</span></a>
+    <a><span class="navigation-button">Blog</span></a>
+    </div>
   </header>
 )
 Header.propTypes = {

@@ -5,11 +5,18 @@ module.exports = {
     author: `@tomfranklin`,
   },
   plugins: [
-    {
+      {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/blogposts`,
         name: `blogposts`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/portfolioposts`,
+        name: `portfolioposts`,
       },
     },
     `gatsby-plugin-react-helmet`,
@@ -20,6 +27,7 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sass`,
     {

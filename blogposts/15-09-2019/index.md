@@ -5,6 +5,7 @@ date: "2018-11-07"
 image: './me-walking-in-the-park.jpg'
 tags: [first-post, blog]
 published: true
+summary: 'Fusce ligula tellus, fringilla nec odio sed, accumsan scelerisque sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum vulputate leo nec hendrerit viverra.'
 ---
 
 #First Post

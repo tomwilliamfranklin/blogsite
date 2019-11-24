@@ -28,7 +28,6 @@ const IndexPage = ({data}) => (
       </div>
       
       <div class="title-section__inner-container">
-        
         <div class="skills-container">
         <div class="skills-container-item">
             <img class="icon1"src={icondata}/>
@@ -48,7 +47,7 @@ const IndexPage = ({data}) => (
           <div class="skills-container-item">
             <img class="icon1" src={iconcogs}/>
             <h3>Back-end Development</h3>
-            <p>I enjoy developing and problem solving various backend projects, from an MVC setup to a API. </p>
+            <p>I love to develop and problem solve various backend projects, from an MVC setup to a API. </p>
             <h4>Back-end Skills & Tools</h4>
             <p>
               .NET Core 2.2
@@ -98,22 +97,18 @@ const IndexPage = ({data}) => (
         <div class="contents-title-container">
           <h2>Portfolio</h2>
         </div>
-        <div class="contents-text-container">
+        <div class="contents-text-container centered">
         <p>
-          I’m a <span class="highlighted-pink"> graduate software developer </span> from Northamptonshire, England.
-          <br/>
-          I love programming, and in my spare time I enjoy developing and 
-          <br/>
-          working on my own projects like this website.
+          In my own time I love to get upto my own projects, and I love the challenge which comes with building my own applications.
           <br/>
         </p>
         </div>
-        <div class="blog-post-list">
+        <div class="portfolio-post-list">
               {data.docs.edges.map(post => {
                     let featuredImgFluid = post.node.frontmatter.image.childImageSharp.fluid
               return (
                 <Link class="portfolio-post-item" key={post.node.id} to={post.node.frontmatter.path}> 
-                <div class="blog-post-item-details-top">
+                <div class="portfolio-post-item-details-top">
                         <h5>{post.node.frontmatter.title}</h5>
                           <div class="circle red">
                           </div>
@@ -122,9 +117,9 @@ const IndexPage = ({data}) => (
                           <div class="circle green">
                           </div>
                       </div>
-                      <div class="blog-post-item-image"><Img style={{margin:'auto'}}fluid={featuredImgFluid}/>
-                      <div class="blog-post-item-details">
-                        <div class="blog-post-item-details__inner">
+                      <div class="portfolio-post-item-image"><Img style={{margin:'auto'}}fluid={featuredImgFluid}/>
+                      <div class="portfolio-post-item-details">
+                        <div class="portfolio-post-item-details__inner">
                         {post.node.frontmatter.tags.map(tag => {
                       return (<h4>{tag}</h4>)
                             })}
@@ -145,21 +140,33 @@ const IndexPage = ({data}) => (
           <br/>
           <br/>
         </p>
-        <button class="button-outlined">Drop me an email</button>
+          <button class="button-outlined">Drop me an email</button>
         </div>
       <div class="title-section__inner-container">
         <div class="skills-container">
           <div class="skills-container-item">
             <img class="icon1" src={iconthinking}/>
             <h3>How can I help?</h3>
-            <p>Something Something Something </p>
-            <h4>List of Significant Traits</h4>
+            <p> 
+             Something Something Something
+            </p>
+            <h4>Front-End Technologies</h4>
             <p>
-              Something
+              VSCode
               <br/>
-              Something
+              JQuery
               <br/>
-              Something
+              GatsbyJS
+              <br/>
+              SCSS
+              <br/>
+              Angular
+              <br/>
+              React
+              <br />
+              Gitlab
+              <br />
+              Github
             </p>
           </div>
         </div>
@@ -169,16 +176,24 @@ const IndexPage = ({data}) => (
     <section class="contents-section blogposts">
       <div class="title-section__inner-container-spacing">
       </div>
-
+      <div class="contents-title-container">
+          <h2>Blog</h2>
+        </div>
         <div class="blog-post-list">
             {data.blogs.edges.map(post => {
               let featuredImgFluid = post.node.frontmatter.image.childImageSharp.fluid
             return (
               <Link class="blog-post-item" key={post.node.id} to={post.node.frontmatter.path}> 
-                    <div class="blog-post-item-image"><Img style={{width:'200px', height:'200px', margin:'auto'}}fluid={featuredImgFluid}/></div>
-                    <div class="blog-post-item-date"><h2> {post.node.frontmatter.date} </h2></div>
+                <div class="blog-post-item-text">
                     <div class="blog-post-item-title"><h2> {post.node.frontmatter.title}</h2></div>
-              </Link>
+                    <div class="blog-post-item-date"><h2> Published {post.node.frontmatter.date} </h2></div>
+                    <div class="blog-post-item-summary"><h2> {post.node.frontmatter.summary} </h2></div>
+                    <button class="button-outlined small">Read More</button>
+                </div>
+                <div class="blog-post-item-imagecontainer">
+                    <div class="blog-post-item-image"><Img style={{width:'250px', height:'250px', margin:'auto'}}fluid={featuredImgFluid}/></div>
+                </div>
+            </Link>
             )})}
         </div>
     </section>
@@ -202,6 +217,7 @@ query indexQuery {
                 title
                 path         
                 published
+                summary
                 image {
                   childImageSharp {
                     fluid(maxWidth: 800) {

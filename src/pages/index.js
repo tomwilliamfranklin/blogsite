@@ -18,7 +18,7 @@ const IndexPage = ({data}) => (
     <div class="contents-text-container">
       <h4>Hey!</h4>
       <p>
-        I’m a <span class="highlighted-pink"> graduate software developer </span> from Northamptonshire, England.
+        I’m a <span class="highlighted-yellow"> graduate software developer </span> from Northamptonshire, England.
         <br/>
         I love programming, and in my spare time I enjoy developing and 
         <br/>
@@ -133,49 +133,18 @@ const IndexPage = ({data}) => (
     </section>
 
     {/* Blog Section */}
-    <section class="title-section">
+    <section class="title-section-small">
         <div class="contents-text-container">
         <p>
-          <span class="highlighted-pink"> Interested in working together? </span> I would love for you to get in contact
+          <span class="highlighted-yellow"> Interested in working together? </span> I would love for you to get in contact
           <br/>
           <br/>
         </p>
-          <button class="button-outlined">Drop me an email</button>
+          <button class="button-outlined highlighted-yellow">Drop me an email</button>
         </div>
-      <div class="title-section__inner-container">
-        <div class="skills-container">
-          <div class="skills-container-item">
-            <img class="icon1" src={iconthinking}/>
-            <h3>How can I help?</h3>
-            <p> 
-             Something Something Something
-            </p>
-            <h4>Front-End Technologies</h4>
-            <p>
-              VSCode
-              <br/>
-              JQuery
-              <br/>
-              GatsbyJS
-              <br/>
-              SCSS
-              <br/>
-              Angular
-              <br/>
-              React
-              <br />
-              Gitlab
-              <br />
-              Github
-            </p>
-          </div>
-        </div>
-      </div>
     </section>
 
     <section class="contents-section blogposts">
-      <div class="title-section__inner-container-spacing">
-      </div>
       <div class="contents-title-container">
           <h2>Blog</h2>
         </div>

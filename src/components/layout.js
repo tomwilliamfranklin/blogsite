@@ -40,10 +40,10 @@ const Layout = ({ children }) => {
       </div>
 
       <footer class="footer">
-          <div class="footer-inner">
+          <div class="footer-inner"> <p>
           © {new Date().getFullYear()}, Built with
           {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+         <a href="https://www.gatsbyjs.org">Gatsby</a></p>
           </div>
         </footer>
 

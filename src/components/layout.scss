@@ -1,7 +1,9 @@
 //#2098D1
 $header-height: auto;
 $primary-color: #262626;
-$secondary-color: #3C157B;
+$secondary-color: #362066;
+$highlighted: #FF0266;
+$highlightedonpurple: #fb8400;
 $white: #fff;
 $title-font: 'Raleway', sans-serif;
 $p-font:  "Roboto", "Helvetica", "Arial", sans-serif;
@@ -26,8 +28,8 @@ p {
   background-color:inherit;
   font-size: 19pt;
   font-family: $p-font;
-  font-weight:200;
-  letter-spacing:0.3pt;
+  font-weight:300;
+  letter-spacing: .5pt;
 }
 
 body {
@@ -60,9 +62,36 @@ h4 { //Bold Titles
   text-align:left;
 }
 
+.footer-inner p {
+  margin:0;
+}
+
+.footer a {
+  font-size: 19pt !important;
+}
+
+a:visited {
+  color:unset;
+}
+
+a:hover {
+  color: $highlighted;
+}
+
 .highlighted-pink {
-  color: #E31B6D;
-  font-weight:300;
+  color: $highlighted;
+  font-weight:500;
+}
+
+.highlighted-yellow {
+  color: $highlightedonpurple !important;
+  font-weight:500;
+  border-color: $highlightedonpurple !important;
+}
+
+.highlighted-yellow:hover {
+  background-color: $highlightedonpurple !important;
+  color: #fff !important;
 }
 
 .heavy {
@@ -188,11 +217,24 @@ h4 { //Bold Titles
   min-height: 450px;
   justify-content: center;
   position: relative;
-  background-color: #3C157B;
+  background-color: $secondary-color;
   background-repeat: repeat;
   background-size: auto;
   background-position: -112.787px 215.7px;
 }
+
+.title-section-small {
+  padding: 110px 20px;
+  display: flex;
+  min-height: 0px;
+  justify-content: center;
+  position: relative;
+  background-color: $secondary-color;
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: -112.787px 215.7px;
+}
+
 
 .title-section .title-section__inner {
   padding: 10px 0;
@@ -253,7 +295,7 @@ h4 { //Bold Titles
 }
 
 .skills-container-item h4 {
-  color:#E31B6D;
+  color:$highlighted;
   letter-spacing: 0.01071em;
   margin: 25px auto 25px;
   font-size: 1.5rem;
@@ -350,10 +392,10 @@ h4 { //Bold Titles
 
 .button-outlined {
   margin:0 auto;
-  border: 1px solid #E31B6D;
+  border: 1px solid $highlighted;
   border-radius:5px;
   background-color: transparent;
-  color: #E31B6D;
+  color: $highlighted;
   padding: 14px 28px;
   font-size: 18pt;
   cursor: pointer;
@@ -361,7 +403,7 @@ h4 { //Bold Titles
 }
 
 .button-outlined:hover {
-  background-color: #E31B6D;
+  background-color: $highlighted;
   color:#eee;
   transition: 0.3s;
 }
@@ -393,7 +435,7 @@ h4 { //Bold Titles
   transition:0.6s;
   background-color:#262626 !important;
   color:#fff !important;
-  border-bottom: 5px solid $secondary-color;
+  border-bottom: 5px solid $highlightedonpurple;
 }
 //Something Else
 .header {
@@ -423,7 +465,7 @@ h4 { //Bold Titles
   }
 
   .navigation-button:hover {
-    color:#E31B6D !important;
+    color:$highlighted !important;
     cursor:pointer;
   }
 }
@@ -761,6 +803,7 @@ h4 { //Bold Titles
 //Actual blog post pages
 
 .blog-post-container {
+  height:100vh;
   margin:20px;
 }
 
@@ -798,7 +841,7 @@ h4 { //Bold Titles
   .title-section {
     padding: 0 !important;
   }
-
+  
   .title-section__inner-container {
     border-radius:0px;
   }

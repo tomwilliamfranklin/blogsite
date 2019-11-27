@@ -52,7 +52,7 @@ module.exports = {
         ],
       },
     },
-        {
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
@@ -66,6 +66,20 @@ module.exports = {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
               wrapperStyle: `margin-bottom: 1.0725rem`,
+            },
+          },
+          {
+            resolve: "gatsby-remark-custom-blocks",
+            options: {
+              blocks: {
+                header: {
+                  classes: "blog-page-header",
+                },
+                info: {
+                  classes: "info",
+                  title: "optional",
+                },
+              },
             },
           },
         ],

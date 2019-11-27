@@ -15,7 +15,7 @@ const pictureContainer = ({ siteTitle }) => (
       <div class="picture-section__inner">
         <div class="picture-section-container">
           <h1>Tom Franklin</h1>
-          <h2>Professional Software Developer</h2>
+          <h2>Graduate Software Developer</h2>
         </div>
         <div class="picture-section-breaker"></div>
         <div class="picture-section-icons-container">

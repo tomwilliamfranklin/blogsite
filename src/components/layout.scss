@@ -3,7 +3,7 @@ $header-height: auto;
 $primary-color: #262626;
 $secondary-color: #362066;
 $highlighted: #FF0266;
-$highlightedonpurple: #fb8400;
+$highlightedonpurple: #FF0266;
 $white: #fff;
 $title-font: 'Raleway', sans-serif;
 $p-font:  "Roboto", "Helvetica", "Arial", sans-serif;
@@ -87,11 +87,6 @@ a:hover {
   color: $highlightedonpurple !important;
   font-weight:500;
   border-color: $highlightedonpurple !important;
-}
-
-.highlighted-yellow:hover {
-  background-color: $highlightedonpurple !important;
-  color: #fff !important;
 }
 
 .heavy {
@@ -435,7 +430,7 @@ a:hover {
   transition:0.6s;
   background-color:#262626 !important;
   color:#fff !important;
-  border-bottom: 5px solid $highlightedonpurple;
+  border-bottom: 5px solid $secondary-color;
 }
 //Something Else
 .header {
@@ -809,6 +804,17 @@ a:hover {
 
 .blog-post-container p {
   padding: 0 20px;
+}
+
+.blog-page-container {
+  width:100%;
+}
+
+.blog-page-header {
+  height:75px;
+}
+
+.blog-page__inner-container {
 }
 
 

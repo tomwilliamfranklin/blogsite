@@ -7,11 +7,19 @@ export default function Template({ data: {markdownRemark} }) {
     //const post = data.markdownRemark;
     return (
         <Layout>
-            <div class="blog-post-list"> 
+            <div class="blog-page-container">
+                <div class="blog-page-header">
+
+                </div>
+                <div class="blog-page__inner-container">
                 <Helmet title={frontmatter.title}/>
-                <img></img>
                 <div class="blog-post-container" dangerouslySetInnerHTML={{__html: html}}/> 
+       
+                </div>
             </div>
+            <div class="blog-post-list"> 
+
+       </div>
         </Layout>
     )
 }
@@ -21,8 +29,19 @@ export const postQuery = graphql`
         markdownRemark(frontmatter: { path: { eq: $path} }) {
             html
             frontmatter {
-                path
+                date(formatString: "DD-MMMM-YYYY")
                 title
+                path         
+                published
+                summary
+                image {
+                  childImageSharp {
+                    fluid(maxWidth: 800) {
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
+                }
+
             }
         }
     }

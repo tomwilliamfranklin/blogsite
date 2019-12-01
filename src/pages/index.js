@@ -12,13 +12,13 @@ const IndexPage = ({data}) => (
   <div>
   <Layout>
     <SectionPictureContainer></SectionPictureContainer>
+    
     {/* Portfolio Section */}
-
     <section class="title-section">
     <div class="contents-text-container">
       <h4>Hey!</h4>
       <p>
-        I’m a <span class="highlighted-yellow"> graduate software developer </span> from Northamptonshire, England.
+        I’m a <span class="highlighted-alt"> graduate software developer </span> from Northamptonshire, England.
         <br/>
         I love programming, and in my spare time I enjoy developing and 
         <br/>
@@ -136,11 +136,11 @@ const IndexPage = ({data}) => (
     <section class="title-section-small">
         <div class="contents-text-container">
         <p>
-          <span class="highlighted-yellow"> Interested in working together? </span> I would love for you to get in contact
+          <span class="highlighted-alt"> Interested in working together? </span> I would love for you to get in contact
           <br/>
           <br/>
         </p>
-          <button class="button-outlined highlighted-yellow">Drop me an email</button>
+          <button class="button-outlined highlighted">Drop me an email</button>
         </div>
     </section>
 
@@ -175,7 +175,7 @@ query indexQuery {
   blogs: allMarkdownRemark(
     limit:10 
     filter: { fileAbsolutePath: {regex : "\/blogposts/"}, frontmatter: { published: {eq: true} } }
-    sort:{fields: [frontmatter___date] order:DESC}
+    sort:{fields: [frontmatter___title] order:DESC}
   
     ) {
       edges {

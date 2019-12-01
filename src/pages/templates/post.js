@@ -1,43 +1,64 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import Layout from "../../components/layout"
+import "./styling/post.scss"
 import Img from "gatsby-image"
 
-export default function Template({ data: {markdownRemark} }) {
+export default function PostTemplate({ data: {markdownRemark} }) {
     const {frontmatter, html} = markdownRemark;
     //const post = data.markdownRemark;
     return (
         <Layout>
+            <Helmet title={frontmatter.title}/>
             <div class="blog-page-container">
                 <div class="blog-page-header">
-
+                        <Img style={{height:'100%', margin:'auto'}}fluid={frontmatter.image.childImageSharp.fluid}/>
+                        <div class="blog-page-header__inner">
+                            <div class="blog-page-header-text">
+                            <h1>{frontmatter.title}</h1>
+                            <div class="blog-page-header-subtitle">
+                                <p>
+                                {frontmatter.date}
+                                <br/>
+                               
+                                By Tom Franklin</p>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-page__inner-container">
+                    <div class="blog-page-date">
+                    </div>
+                    <p class="footnote">{frontmatter.context}</p>
+                    <div class="blog-page-contents">
+                        <h3>THIS IS A POST </h3>
+                        <div class="blog-post-container__inner" dangerouslySetInnerHTML={{__html: html}}/>
+                    </div>
                 </div>
-                <div class="blog-post__inner-container">
-
-                </div>
-            </div>
-            <div class="blog-post-list"> 
-                <Helmet title={frontmatter.title}/>
-                <div class="blog-post-container" dangerouslySetInnerHTML={{__html: html}}/> 
             </div>
         </Layout>
     )
 }
 
 export const postQuery = graphql`
-    query BlogPostByPath($path: String!) {
+    query PortfolioPostsByName($path: String!) {
         markdownRemark(frontmatter: { path: { eq: $path} }) {
             html
             frontmatter {
-                path
+                date(formatString: "DD-MMMM-YYYY")
                 title
+                path         
+                published
+                summary
+                context
                 image {
-                    childImageSharp {
-                      fluid(maxWidth: 800) {
-                        ...GatsbyImageSharpFluid
-                      }
+                  childImageSharp {
+                    fluid(maxWidth: 800) {
+                      ...GatsbyImageSharpFluid
                     }
                   }
+                }
+
             }
         }
     }

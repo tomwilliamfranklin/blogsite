@@ -1,0 +1,132 @@
+
+$primary-color: #262626;
+$secondary-color: #362066;
+$highlighted: #FF0266;
+$highlightedonpurple: #FF0266;
+$white: #fff;
+$title-font: 'Raleway', sans-serif;
+$p-font:  "Roboto", "Helvetica", "Arial", sans-serif;
+
+.blog-page-container {
+  background-color:#eee;
+  background-repeat: repeat;
+  background-size: auto;
+  background-color: transparent;
+  background-position: -112.787px 215.7px;
+  background-image: url(../../../images/prismLight.png);
+  height: 100%;
+}
+
+.blog-page-header {
+  height: 75vh;
+  margin-top: 75px;
+  position:relative;
+  border-top: 5px solid $secondary-color;
+  background-color:#262626;
+}
+
+$blur: 30px;
+
+.blog-page-header Img {
+  filter: blur($blur);
+  -webkit-filter: blur($blur);
+  height:100% !important;
+  position:relative;
+}
+
+.blog-page-header-subtitle {
+  display:flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+.blog-page-header-subtitle p {
+  margin-right:20px;
+  margin-top:0;
+  font-size:18pt;
+  padding:0;
+}
+
+.blog-page-date {
+  width:100%;
+}
+
+.blog-page-date p {
+  width: max-content;
+  margin: auto;
+  color: #262626;
+}
+
+.blog-page-contents {
+  z-index:2;
+  width:100%;
+  margin:0;
+}
+
+.blog-post-container__inner {
+  text-align: center;
+  margin:auto;
+  background-color:inherit;
+  letter-spacing: .5pt !important;
+  -webkit-font-smoothing: antialiased;
+  height:auto;
+  max-width: 1000px;
+  padding:50px;
+}
+
+.blog-page-contents p, .footnote, .blog-page-contents ul, .blog-page-contents h1, .blog-page-contents h3, .blog-page-contents blockquote, .blog-page-contents h2 {
+  color: #262626 !important;
+  line-height: 1.67;
+  font-weight:300;
+  font-size: 14pt;
+  font-family:$p-font;
+}
+
+.blog-page-contents h1 {
+  font-size: 18pt;
+  font-weight:800;
+}
+
+.blog-page-contents h2 {
+  font-size: 16pt;
+  font-weight:500;
+}
+
+.blog-page-contents h3 {
+  font-size: 14pt;
+  font-weight:500;
+}
+
+.footnote {
+  color: #262626 !important;
+  text-align:center;
+  margin-top:10px;
+  font-style: italic;
+}
+
+.blog-page-header__inner {
+  display:flex;
+  flex-direction: column;
+  position:absolute;
+  margin:auto;
+  width:100%;
+  height:100%;
+  top:0;
+}
+
+.blog-page-header-text {
+  margin:auto;
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+}
+
+.blog-page-header-text h1 {
+  font-size:80px;
+}
+
+.blog-page-header-text h2 {
+  font-size: 40px;
+}
+
+@media only screen and (max-width: 1024px) {
+
+}

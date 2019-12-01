@@ -75,9 +75,14 @@ module.exports = {
                 header: {
                   classes: "blog-page-header",
                 },
-                info: {
-                  classes: "info",
-                  title: "optional",
+                maincontent: {
+                  classes: "blog-page-content-main",
+                },
+                secondarycontent: {
+                  classes: "blog-page-content-secondary",
+                },
+                image: {
+                  classes: "blog-page-image",
                 },
               },
             },

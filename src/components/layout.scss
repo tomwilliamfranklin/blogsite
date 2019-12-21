@@ -62,6 +62,14 @@ h4 { //Bold Titles
   text-align:left;
 }
 
+h5 {
+  font-size: 14pt;
+  font-weight: 500;
+  color: #262626 !important;
+  line-height: 1.67;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+
 .footer-inner p {
   margin:0;
 }
@@ -813,10 +821,6 @@ a:hover {
 .blog-page-header {
   height:75px;
 }
-
-.blog-page__inner-container {
-}
-
 
 @media only screen and (max-width: 1024px) {
   /* For mobile phones: */

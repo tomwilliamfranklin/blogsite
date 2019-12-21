@@ -72,6 +72,21 @@ $blur: 30px;
   height:auto;
   max-width: 1000px;
   padding:50px;
+  padding-top:0;
+  text-align:left;
+  h3:first-letter  {
+    float: left;
+    font-family: Georgia;
+    font-size: 60px;
+    line-height: 57px;
+    padding-top: 4px;
+    padding-right: 3px;
+    padding-left: 3px;
+  }
+  li {
+    text-align:left;
+    padding-left: 10px;
+  }
 }
 
 .blog-page-contents p, .footnote, .blog-page-contents ul, .blog-page-contents h1, .blog-page-contents h3, .blog-page-contents blockquote, .blog-page-contents h2 {

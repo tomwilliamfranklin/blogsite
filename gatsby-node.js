@@ -1,22 +1,9 @@
 const path = require('path');
 exports.createPages = ({boundActionCreators, graphql}) => {
     const {createPage} = boundActionCreators;
-    const postTemplate = path.resolve('src/pages/templates/post.js');
     const portfolioTemplate = path.resolve('src/pages/templates/project.js');
     return graphql(`{
         blogs: allMarkdownRemark {
-            edges {
-                node {
-                    html
-                    id
-                    frontmatter {
-                        path
-                        title
-                    }
-                }
-            }
-        }
-        docs: allMarkdownRemark {
             edges {
                 node {
                     html
@@ -36,14 +23,8 @@ exports.createPages = ({boundActionCreators, graphql}) => {
         res.data.blogs.edges.forEach(({node}) => {
             createPage({
                 path: node.frontmatter.path,
-                component: postTemplate,
-            })
-        })
-
-        res.data.docs.edges.forEach(({node}) => {
-            createPage({
-                path: node.frontmatter.path,
                 component: portfolioTemplate,
+                context:(node)
             })
         })
     })

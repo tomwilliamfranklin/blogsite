@@ -1,4 +1,6 @@
-window.requestAnimFrame = function()
+$(document).ready(function() {
+
+    window.requestAnimFrame = function()
 	{
 		return (
 			window.requestAnimationFrame       || 
@@ -11,6 +13,7 @@ window.requestAnimFrame = function()
 			}
 		);
 }();
+
 
 var canvas = document.getElementById('fancycanvas'); 
 var context = canvas.getContext('2d');
@@ -142,3 +145,5 @@ canvas.setAttribute('width', style_width * dpi);
 
    
     animate(); 
+
+});

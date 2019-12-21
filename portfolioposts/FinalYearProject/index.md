@@ -6,6 +6,7 @@ image: './fyp1.jpg'
 tags: [Java, CSS, JDBC, SQL, MySQL, MariaDB]
 published: true
 context: "A De Montfort University Project"
+summary: "This is a summary! "
 ---
 ###My overall dissertation project achieved a grade of 85%, above the First-Class threshold of 70%, this includes the accompanying 10,000 words dissertation essay, as well as a presentation VIVA.
 

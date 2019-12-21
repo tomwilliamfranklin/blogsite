@@ -5,13 +5,6 @@ module.exports = {
     author: `@tomfranklin`,
   },
   plugins: [
-      {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/blogposts`,
-        name: `blogposts`,
-      },
-    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

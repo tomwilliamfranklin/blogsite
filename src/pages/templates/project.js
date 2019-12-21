@@ -5,7 +5,10 @@ import "./styling/post.scss"
 import Img from "gatsby-image"
 
 export default function PortfolioTemplate({ data: {markdownRemark} }) {
-    const {frontmatter, html} = markdownRemark;
+    if(markdownRemark !== null) {
+    const frontmatter = markdownRemark.frontmatter;
+    const html = markdownRemark.html;
+      
     //const post = data.markdownRemark;
     return (
         <Layout>
@@ -36,6 +39,7 @@ export default function PortfolioTemplate({ data: {markdownRemark} }) {
             </div>
         </Layout>
     )
+    } else return null
 }
 
 export const postQuery = graphql`

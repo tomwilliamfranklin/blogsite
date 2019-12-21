@@ -11,6 +11,7 @@ import iconthinking from "../images/thinking.svg";
 const IndexPage = ({data}) => (
   <div>
   <Layout>
+  <canvas class="canvas" id="fancycanvas"></canvas>
     <SectionPictureContainer></SectionPictureContainer>
     
     {/* Portfolio Section */}

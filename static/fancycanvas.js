@@ -1,3 +1,5 @@
+
+
 $(document).ready(function() {
 
     window.requestAnimFrame = function()
@@ -16,7 +18,8 @@ $(document).ready(function() {
 
 
 var canvas = document.getElementById('fancycanvas'); 
-var context = canvas.getContext('2d');
+
+if(canvas !== null) {var context = canvas.getContext('2d');
 
 //get DPI
 let dpi = window.devicePixelRatio || 1;
@@ -145,5 +148,7 @@ canvas.setAttribute('width', style_width * dpi);
 
    
     animate(); 
+
+}
 
 });

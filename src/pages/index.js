@@ -15,7 +15,7 @@ const IndexPage = ({data}) => (
     <SectionPictureContainer></SectionPictureContainer>
     
     {/* Portfolio Section */}
-    <section class="title-section">
+    <section id="aboutme" class="title-section">
     <div class="contents-text-container">
       <h4>Hey!</h4>
       <p>
@@ -26,7 +26,7 @@ const IndexPage = ({data}) => (
          working on my own projects like this website.
         <br/>
       </p>
-      </div>
+    </div>
       
       <div class="title-section__inner-container">
         <div class="skills-container">
@@ -92,7 +92,7 @@ const IndexPage = ({data}) => (
     </section>
 
     <section class="contents-section blogposts">
-      <div class="title-section__inner-container-spacing">
+      <div id="portfolio" class="title-section__inner-container-spacing">
       </div>
       <div class="contents-section__inner">
         <div class="contents-title-container">
@@ -145,7 +145,7 @@ const IndexPage = ({data}) => (
         </div>
     </section>
 
-    <section class="contents-section blogposts">
+    <section id="blog" class="contents-section blogposts">
       <div class="contents-title-container">
           <h2>Blog</h2>
         </div>

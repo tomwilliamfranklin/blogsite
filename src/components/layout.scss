@@ -448,6 +448,10 @@ a:hover {
   color: $primary-color;
 }
 
+:Link {
+  color: white;
+}
+
 .contents-section p {
   margin: 0;
   color:#262626;
@@ -478,7 +482,7 @@ a:hover {
   color:#fff;
   .navigation-button {
     padding:10px;
-    font-size:1.25em;
+    font-size:1em;
     display: inherit;
     align-items: inherit;
     justify-content: inherit;

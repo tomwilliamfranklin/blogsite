@@ -30,8 +30,10 @@ const Layout = ({ children }) => {
     <Helmet>
     <script src="https://kit.fontawesome.com/15be33f2fc.js" crossorigin="anonymous"></script>
     <script src={withPrefix('jquery.min.js')}  type="text/javascript" ></script>
+    <script src={withPrefix('scrollTo.min.js')}  type="text/javascript" ></script>
     <script src={withPrefix('fancycanvas.js')}  type="text/javascript" ></script>
     <script src={withPrefix('navigation.js')}  type="text/javascript" ></script>
+    <script src={withPrefix('fading.js')}  type="text/javascript" ></script>
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet"></link>
     </Helmet>
     <Header></Header>

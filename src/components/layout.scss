@@ -626,7 +626,7 @@ a:hover {
 .portfolio-post-item-image:hover > .portfolio-post-item-details {
   position: absolute;
   height: 100%;
-  width: inherit;
+  width: 100%;
   /* margin-top: 30px; */
   background-color: rgba(38,38,38,0.8);
   top: 0;
@@ -847,12 +847,37 @@ a:hover {
 }
 
 @media screen and (max-width: 1270px) {
-  h4 {
+  .title-section {
+    .contents-text-container 
+      p {
+        text-align: left !important;
+      
+    }
+  }
+  .contents-title-container h2  {
+    font-size: 22pt;
+  }
+
+  .contents-text-container p {
+    font-size: 14pt;
+    text-align:center;
+  }
+
+
+  .title-section__inner-container-spacing {
+    height:1525px !important;
+  }
+  h4,.skills-container-item h3,.skills-container-item h4 {
     font-size:16pt;
   }
 
   p {
     font-size: 14pt;
+  }
+
+  .skills-container-item p {
+    font-size: 14pt;
+    text-align: center;
   }
 
   .mainContainer {
@@ -923,10 +948,22 @@ a:hover {
       position: unset !important;
     }
   }
+
+  .contents-text-container {
+    padding-top: 25px;
+  }
 }
 
 //Iphone SE <
 @media screen and (max-width: 320px) {
+  p {
+    font-size: 13pt !important;
+  }
+
+  .button-outlined {
+    font-size: 14pt;
+  }
+
   .blog-post-item-date {
     h2 {
       width:50%;
@@ -940,4 +977,12 @@ a:hover {
     }
   }
 
+  .title-section__inner-container {
+    border-radius:0px;
+    top: 55%;
+  }
+  
+  .portfolio-post-item-details-top h5 {
+    padding-right: 40px;
+  }
 }

@@ -92,8 +92,6 @@ const IndexPage = ({data}) => (
     </section>
 
     <section class="contents-section blogposts">
-      <div id="portfolio" class="title-section__inner-container-spacing">
-      </div>
       <div class="contents-section__inner">
         <div class="contents-title-container">
           <h2>Portfolio</h2>

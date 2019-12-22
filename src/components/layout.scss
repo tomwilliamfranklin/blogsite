@@ -293,14 +293,11 @@ a:hover {
   justify-content: center;
 }
 
-.title-section__inner-container-spacing {
-  height:300px;
-}
-
 .contents-section__inner {
   display:flex;
   flex-direction: column;
   justify-content: center;
+  padding-top:300px;
 }
 
 .skills-container-item {
@@ -853,6 +850,11 @@ a:hover {
 }
 
 @media screen and (max-width: 1270px) {
+
+  .contents-section__inner {
+    padding-top: 1600px;
+  }
+
   .title-section {
     .contents-text-container 
       p {
@@ -869,10 +871,6 @@ a:hover {
     text-align:center;
   }
 
-
-  .title-section__inner-container-spacing {
-    height:1525px !important;
-  }
   h4,.skills-container-item h3,.skills-container-item h4 {
     font-size:16pt;
   }
@@ -914,11 +912,6 @@ a:hover {
   .title-section__inner-container {
     border-radius:0px;
     top: 53%;
-  }
-
-
-  .title-section__inner-container-spacing {
-    height:1650px;
   }
 
   .picture-section__inner h1 {

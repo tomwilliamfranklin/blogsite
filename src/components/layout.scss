@@ -70,13 +70,35 @@ h5 {
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
 
-.footer-inner p {
-  margin:0;
+.margin-auto {
+  margin:auto;
 }
 
-.footer a {
-  font-size: 19pt !important;
+.footer {
+  background-color:$secondary-color;
+  height: 200px;
+  width: 100%;
+  z-index:20;
+  bottom:0;
+  overflow:hidden;
+  .footer-inner {
+    text-align: center;
+    color: #eee;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    bottom: 0;
+    width:inherit;
+    padding-top: 100px;
+    vertical-align: middle;
+    padding-bottom:10px;
+    p {
+      font-size:14px;
+    }
+  }
+
 }
+
 
 a:visited {
   color:unset;
@@ -183,6 +205,7 @@ a:hover {
   border-top:.5px solid #eee;
   color:transparent;
   box-shadow: 2px 4px 3px rgba(0,0,0,0.6);
+  height:.5px;
 }
 
 .picture-section-icons-container a {
@@ -494,23 +517,8 @@ a:hover {
   height:inherit;
 }
 
-.footer {
-  background-color:$secondary-color;
-  height: 400px;
-  width: 100%;
-  z-index:20;
-  bottom:0;
-}
-
-.footer-inner {
-  text-align: right;
-  padding: 0 20px;
-  color: #eee;
-  display: flex;
-  justify-content: center;
-  bottom: 0;
-  padding-top: 325px;
-  vertical-align: middle;
+.gatsby-image-wrapper {
+  height: 100%;
 }
 
 //gatsby overwrites
@@ -789,9 +797,11 @@ a:hover {
   font-weight:300;
   letter-spacing:1pt;
   font-size:12pt;
-  text-align:left;
   font-family:$p-font;
   padding-bottom:10px;
+  width:100%;
+  text-align:left;
+  margin-bottom:25px;
 }
 
 .blog-post-item button {
@@ -837,6 +847,24 @@ a:hover {
 }
 
 @media screen and (max-width: 1270px) {
+  h4 {
+    font-size:16pt;
+  }
+
+  p {
+    font-size: 14pt;
+  }
+
+  .mainContainer {
+    overflow:hidden;
+  }
+  .contents-text-container {
+    p {
+      word-wrap: break-word;
+      width: 90vw;
+    }
+  }
+
   .skills-container {
     display:flex;
     flex-direction:column;
@@ -854,9 +882,62 @@ a:hover {
   
   .title-section__inner-container {
     border-radius:0px;
+    top: 53%;
   }
+
 
   .title-section__inner-container-spacing {
     height:1650px;
   }
+
+  .picture-section__inner h1 {
+    font-size: 40px;
+  }
+
+  .picture-section__inner h2 {
+    font-size: 25px;
+  }
+
+  .picture-section-breaker {
+    margin: 15px 50px;
+  }
+  .navigation-button {
+    font-size: 1em !important;
+  }
+
+  .header {
+    justify-content: center;
+  }
+
+  .centered {
+    width: unset;
+  }
+
+  .contents-section {
+
+    padding-left:0;
+  }
+
+  .portfolio-post-item-image {
+    .gatsby-image-wrapper {
+      position: unset !important;
+    }
+  }
+}
+
+//Iphone SE <
+@media screen and (max-width: 320px) {
+  .blog-post-item-date {
+    h2 {
+      width:50%;
+    }
+  }
+
+  .blog-post-item-summary {
+    justify-content:unset;
+    h2 {
+      width:50%;
+    }
+  }
+
 }

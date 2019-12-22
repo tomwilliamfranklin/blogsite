@@ -8,6 +8,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        path: `${__dirname}/blogposts`,
+        name: `blogposts`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         path: `${__dirname}/portfolioposts`,
         name: `portfolioposts`,
       },
@@ -68,11 +75,8 @@ module.exports = {
                 header: {
                   classes: "blog-page-header",
                 },
-                maincontent: {
-                  classes: "blog-page-content-main",
-                },
-                secondarycontent: {
-                  classes: "blog-page-content-secondary",
+                title: {
+                  classes: "blog-page-title",
                 },
                 image: {
                   classes: "blog-page-image",

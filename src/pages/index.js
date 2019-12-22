@@ -141,7 +141,7 @@ const IndexPage = ({data}) => (
           <br/>
           <br/>
         </p>
-          <button class="button-outlined highlighted">Drop me an email</button>
+        <a class="margin-auto" href="mailto:tomwilliamfranklin@gmail.com" ><button class="button-outlined highlighted">Drop me an email</button></a>
         </div>
     </section>
 

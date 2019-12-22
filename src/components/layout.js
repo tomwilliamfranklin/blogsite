@@ -12,6 +12,7 @@ import "./layout.scss"
 import Helmet from "react-helmet"
 import { withPrefix, Link } from "gatsby"
 import Header from "../components/header"
+import SocialMedias from "../components/socialmedias"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -40,12 +41,13 @@ const Layout = ({ children }) => {
       </div>
 
       <footer class="footer">
-          <div class="footer-inner"> <p>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-         <a href="https://www.gatsbyjs.org">Gatsby</a></p>
+        <div class="footer-inner">
+          <SocialMedias></SocialMedias>
+           <p>
+          © {new Date().getFullYear()}, Made with ♥ by Tom Franklin 
+          </p>
           </div>
-        </footer>
+      </footer>
 
     </>
   )

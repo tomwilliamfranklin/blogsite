@@ -12,9 +12,12 @@ html {
   background-color:$primary-color;
 }
 
-:Link {
-  text-decoration: none;
-  font-size:20px;
+.header-inner {
+  :Link {
+    text-decoration: none;
+    font-size:20px;
+    color:white;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -435,7 +438,7 @@ a:hover {
 }
 
 .small {
-  font-size:12pt !important;
+  font-size:12pt;
   padding: 10px 20px;
 }
 
@@ -446,10 +449,6 @@ a:hover {
 
 .contents-section h4 {
   color: $primary-color;
-}
-
-:Link {
-  color: white;
 }
 
 .contents-section p {
@@ -930,9 +929,6 @@ a:hover {
   .picture-section-breaker {
     margin: 15px 50px;
   }
-  .navigation-button {
-    font-size: 1em !important;
-  }
 
   .header {
     justify-content: center;
@@ -956,6 +952,38 @@ a:hover {
   .contents-text-container {
     padding-top: 25px;
   }
+
+  .header-inner {
+    :Link {
+      font-size:15px  !important;
+    }
+  }
+
+  .header {
+    height:60px;
+  }
+
+  .footer-inner {
+    p {
+      font-size: 13px !important;
+    }
+  }
+
+  .blog-post-item-title h2 {
+    font-size: 14pt;
+  }
+
+  .blog-post-item-date {
+    h2 {
+      font-size: 14px;
+    }
+  }
+
+  .blog-post-item-summary {
+   h2 {
+     font-size: 14px;
+   }
+  }
 }
 
 //Iphone SE <
@@ -965,7 +993,7 @@ a:hover {
   }
 
   .button-outlined {
-    font-size: 14pt;
+    font-size: 16px;
   }
 
   .blog-post-item-date {

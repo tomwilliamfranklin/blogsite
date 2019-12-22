@@ -168,5 +168,21 @@ $blur: 30px;
 }
 
 @media only screen and (max-width: 1024px) {
+  .blog-page-header-text h1 {
+    font-size: 40px;
+  }
+  .blog-page-header-subtitle p {
+    font-size:14pt;
+    text-align:center;
+  }
 
+  .blog-page-image {
+    width:100%;
+  }
+
+  .blog-post-container__inner {
+    padding: 100px 20px;
+  }
 }
+
+

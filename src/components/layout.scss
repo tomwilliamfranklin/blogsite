@@ -12,9 +12,12 @@ html {
   background-color:$primary-color;
 }
 
+:Link {
+  text-decoration: none;
+}
+
 .header-inner {
   :Link {
-    text-decoration: none;
     font-size:20px;
     color:white;
   }

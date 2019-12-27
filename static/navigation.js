@@ -1,4 +1,3 @@
+//Made with ♥ by Tom Franklin
 $(document).ready(function() {
-//Not needed anymore 
-
-});
+    });

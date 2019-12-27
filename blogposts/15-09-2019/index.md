@@ -8,6 +8,7 @@ published: true
 context: "A Personal Project"
 summary: "This is a summary! "
 ---
-#Module Chooser
 
-This is a portfolio post
+This is a portfolio postwadawdwa
+      <iframe class="exampleContainer" src="/examples/conwaysgameoflife/ConwaysGameOfLife.html" width="800" height="600"></iframe>
+   

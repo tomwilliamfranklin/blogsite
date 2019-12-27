@@ -1,4 +1,3 @@
-
 $primary-color: #262626;
 $secondary-color: #362066;
 $highlighted: #FF0266;
@@ -111,6 +110,12 @@ $blur: 30px;
       }
     }
   }
+}
+
+.gatsby-resp-iframe-wrapper {
+  padding-bottom: 106% !important;
+  width: 523px;
+  border: 2px solid #262626;
 }
 
 .blog-page-contents p, .footnote, .blog-page-contents ul, .blog-page-contents h1, .blog-page-contents h3, .blog-page-contents blockquote, .blog-page-contents h2 {

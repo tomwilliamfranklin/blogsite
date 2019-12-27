@@ -93,7 +93,7 @@ const IndexPage = ({data}) => (
 
     <section class="contents-section blogposts">
       <div class="contents-section__inner">
-        <div class="contents-title-container">
+        <div style={{paddingTop: "75px"}} id="portfolio" class="contents-title-container">
           <h2>Portfolio</h2>
         </div>
         <div class="contents-text-container centered">

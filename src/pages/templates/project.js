@@ -32,7 +32,7 @@ export default function PortfolioTemplate({ data: {markdownRemark} }) {
                     <div class="blog-page-date">
                     </div>
                     <p class="footnote">{frontmatter.context}</p>
-                    <div class="blog-page-contents">
+                      <div class="blog-page-contents">
                         <div class="blog-post-container__inner" dangerouslySetInnerHTML={{__html: html}}/>
                     </div>
                 </div>
@@ -52,6 +52,7 @@ export const postQuery = graphql`
                 path         
                 published
                 summary
+                inprogress
                 context
                 image {
                   childImageSharp {

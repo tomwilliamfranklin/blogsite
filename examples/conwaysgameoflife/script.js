@@ -3,7 +3,7 @@
 w=500; //Size of Grid, recommend equal height and width
 h=500;
 var size = 10; //Size of cubes, make sure the height/width are both dividable by the size. 
-var frames = 30; //Framerate. Works with max frames tbh. 
+var frames = 0; //Framerate. Works with max frames tbh. 
 var aliveCells = 500;
 
 var squares = Array(w/size+1);
@@ -158,6 +158,9 @@ function changeFrameRate() {
 }
 
 function resetFunc() {
+    if(frames === 0) {
+        frames = 30;
+    }
     setup();
 }
 

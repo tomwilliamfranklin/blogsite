@@ -81,15 +81,9 @@ $blur: 30px;
   max-width: 1000px;
   padding:150px 50px;
   text-align:left;
-  h3:first-letter  {
-    float: left;
+  h3:first-child:first-letter  {
     font-family: Georgia;
-    font-size: 30px;
-    line-height: 1px;
-    /* height: 0; */
-    padding-top: 12px;
-    padding-right: 0px;
-    padding-left: 0px;
+    font-size: 25px;
   }
   li {
     text-align:left;

@@ -82,6 +82,14 @@ $blur: 30px;
   padding:150px 50px;
   text-align:left;
 
+  a {
+    color: $highlighted !important;
+  }
+  
+  a:hover {
+    color: $secondary-color !important;
+  }
+
   h4 {
     color: #B00020;
     font-size: 14pt;
@@ -218,17 +226,24 @@ $blur: 30px;
     border-radius: 5px;
     background-color: transparent;
     color: #FF0266;
-    padding: 14px 28px;
     font-size: 18pt;
     cursor: pointer;
     -webkit-transition: 0.3s;
     transition: 0.3s;
     .custom-block-body {
+      height:100%;
       p {
-        margin:0;
+        width:auto;
         line-height:unset;
         color: #FF0266 !important;
         font-weight: 500 !important;
+        
+        a {
+          padding: 25px;    
+       
+        }
+
+
         a:hover {
           color:#eee !important;
         }
@@ -237,20 +252,14 @@ $blur: 30px;
     }
 }
 
-a {
-  color: $highlighted !important;
-}
-
-a:hover {
-  color: $secondary-color !important;
-}
-
 .blog-page-button:hover {
   background-color: $highlighted;
   transition: 0.3s;
   .custom-block-body {
     p {
+      a {
       color:#eee !important;
+      }
     }
   }
 

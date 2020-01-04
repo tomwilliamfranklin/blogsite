@@ -81,6 +81,15 @@ $blur: 30px;
   max-width: 1000px;
   padding:150px 50px;
   text-align:left;
+
+  h4 {
+    color: #B00020;
+    font-size: 14pt;
+    padding: 20px;
+    border: 1px #B00020 solid;
+    border-radius: 5px;
+    margin-bottom:25px;
+  }
   h3:first-child:first-letter  {
     font-family: Georgia;
     font-size: 25px;
@@ -98,6 +107,7 @@ $blur: 30px;
     width: 50%;
     float: left;
     padding-right: 15px;
+    padding-top: 15px;
     div {
       p {
         font-size: 12pt;
@@ -108,7 +118,26 @@ $blur: 30px;
           margin-left:0 !important;
           margin-right:0 !important;
         } 
+        img {
+          max-width:100%;
+        }
       }
+    }
+  }
+}
+
+.image-out-of-line {
+  margin:auto;
+  width:450px;
+  .custom-block-body {
+    p {
+      display: flex;
+      flex-direction:column;
+    }
+
+    img {
+      width:100%;
+      height:auto;
     }
   }
 }
@@ -119,8 +148,9 @@ $blur: 30px;
   border: 2px solid #262626;
   margin:auto;
   display: block;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
+  margin-block-start: 1.77em !important;
+  margin-block-end: 1.77em !important;
+  line-height: 1.67;
   iframe {
     border:unset;
   }
@@ -180,6 +210,52 @@ $blur: 30px;
   font-size: 40px;
 }
 
+.blog-page-button {
+  width: fit-content;
+    margin: auto;
+    margin: 0 auto;
+    border: 1px solid #FF0266;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #FF0266;
+    padding: 14px 28px;
+    font-size: 18pt;
+    cursor: pointer;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    .custom-block-body {
+      p {
+        margin:0;
+        line-height:unset;
+        color: #FF0266 !important;
+        font-weight: 500 !important;
+        a:hover {
+          color:#eee !important;
+        }
+      
+      }
+    }
+}
+
+a {
+  color: $highlighted !important;
+}
+
+a:hover {
+  color: $secondary-color !important;
+}
+
+.blog-page-button:hover {
+  background-color: $highlighted;
+  transition: 0.3s;
+  .custom-block-body {
+    p {
+      color:#eee !important;
+    }
+  }
+
+}
+
 @media only screen and (max-width: 1024px) {
   .gatsby-resp-iframe-wrapper {
     width: unset;
@@ -194,9 +270,13 @@ $blur: 30px;
   }
 
   .blog-page-image {
-    width:100%;
+    width: 100% !important;
+    div {
+      p {
+        padding-bottom: 10px;
+      }    
+    }
   }
-
   .blog-post-container__inner {
     padding: 100px 20px;
   }

@@ -64,6 +64,12 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: `gatsby-remark-copy-linked-files`,
+            options: {
+              ignoreFileExtensions: [`png`, `jpg`, `jpeg`, `bmp`, `tiff`],
+            },
+          },
+          {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 590,
@@ -79,14 +85,14 @@ module.exports = {
             resolve: "gatsby-remark-custom-blocks",
             options: {
               blocks: {
-                header: {
-                  classes: "blog-page-header",
-                },
-                title: {
-                  classes: "blog-page-title",
+                button: {
+                  classes: "blog-page-button",
                 },
                 image: {
                   classes: "blog-page-image",
+                },
+                imageout: {
+                  classes: "image-out-of-line",
                 },
               },
             },

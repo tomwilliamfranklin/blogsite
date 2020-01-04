@@ -1,8 +1,8 @@
 //Made with ♥ by Tom Franklin
 w=500; //Size of Grid, recommend equal height and width
 h=500;
-var size = 20; //Size of cubes, make sure the height/width are both dividable by the size. 
-var frames = 20; //Framerate. Works with max frames tbh. 
+var size = 10; //Size of cubes, make sure the height/width are both dividable by the size. 
+var frames = 0; //Framerate. Works with max frames tbh. 
 var ruleset = [0,0,0,1,1,1,1,0];
 var cells = Array(w/size);
 var generation = 0;
@@ -18,7 +18,6 @@ function setup() {
     }
 
     cells[Math.round(cells.length/2)] = 1;
-    console.log(cells[cells.length/2])
     for(var i = 0; i<w/size; i++) {
         for(var ii=0;ii<h/size; ii++) {
             fill('white');
@@ -32,9 +31,6 @@ function setup() {
 
 
 function draw() {
-
-    console.log(cells);
-
     for(var i = 0; i<w/size; i++) {
         for(var ii=0;ii<h/size; ii++) {
             fill('white');
@@ -71,7 +67,7 @@ function draw() {
         if(grid[i] != null) {
             for(var ii=0; ii<grid[i].length;ii++) {
                 if(grid[i][ii] == 1) {
-                    fill('pink');
+                    fill('#262626');
                     square(ii*size,i*size, size);
                 } 
             }
@@ -91,6 +87,9 @@ function changeFrameRate() {
 }
 
 function resetFunc() {
+    if(frames === 0) {
+        frames = 20;
+    }
     setup();
 }
 
@@ -131,7 +130,3 @@ switch(document.getElementById('ruleSelect').value) {
 }
 
 }
-
-$(document).ready(function() {
-
-});

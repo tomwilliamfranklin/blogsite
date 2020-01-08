@@ -1,7 +1,7 @@
 ---
 path: '/CellAutomata'
 title: 'Cellular Automata'
-date: "2019-02-20"
+date: "2019-12-20"
 image: './ca2.jpg'
 tags: [JavaScript, p5.js]
 published: true

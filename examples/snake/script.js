@@ -4,12 +4,14 @@ const square = 100;
 const map = new Array(w/square);
 const foodmap = new Array(w/square);
 const background = [38,38,38];
+const endBackground = [18, 18, 18];
 const player = [201, 111, 66];
 const playerStroke = [81, 92, 83];
 const head = [250, 138, 82];
 const dead = [166, 45, 45];
 let currentHead = [0,0];
 let snakeLength = 0;
+let gamePlaying = true;
 
 let direction = "up";
 let sketch = function(p) {
@@ -19,6 +21,7 @@ let sketch = function(p) {
     }
 
     p.setup = function() {
+        snakeLength = 0;
         direction = "up";
         const wrandom = Math.floor(Math.random() * (w/square));
         const hrandom = Math.floor(Math.random() * (h/square));
@@ -49,9 +52,8 @@ let sketch = function(p) {
     left:[ -1, 0],          right:[ +1, 0],
                 down:[0, +1]};
 
-
     const snake = [];
-
+    let previousDirection = "down";
     p.draw = function() { 
         const toHead = [];
         var temp1 = currentHead[0];
@@ -59,7 +61,7 @@ let sketch = function(p) {
                 if(map[temp1 + coor[direction][0]] != null) {
                     if(map[temp1 + coor[direction][0]][temp2+coor[direction][1]] != null) {
                         if(map[temp1 + coor[direction][0]][temp2+coor[direction][1]] == true) {
-                            //endGame();
+                            endGame();
                         } else {
                             if(foodmap[temp1 + coor[direction][0]][temp2+coor[direction][1]] === true) {
                                 snakeLength++;
@@ -74,10 +76,10 @@ let sketch = function(p) {
                             }                
                         }
                     } else {
-                       // endGame();
+                        endGame();
                 }    
                 }  else {
-                    //endGame();
+                    endGame();
                 }                
         p.updatePixels();
     }
@@ -92,29 +94,50 @@ let sketch = function(p) {
                         p.fill(dead);
                         p.square(i,ii, square);
                     }         
-                
+                    else {
+                        p.fill(endBackground);
+                        p.square(i,ii,square);
+                    }
             }
         }
 
         p.updatePixels();
+        gamePlaying = false;
+        p.frameRate(0);
+        
     }
-
+    previousDirection = "up";
      p.keyPressed = function() {
-        if(p.keyCode === p.UP_ARROW) {
-            direction = "up";
-            console.log(direction);
-        }
-        if(p.keyCode === p.LEFT_ARROW) {
-            direction = "left";
-            console.log(direction);
-        }
-        if(p.keyCode === p.RIGHT_ARROW) {
-            direction = "right";
-            console.log(direction);
-        }
-        if(p.keyCode === p.DOWN_ARROW) {
-            direction = "down";
-            console.log(direction);
+            if(!gamePlaying) {
+                p.setup();  
+                gamePlaying = true; 
+            } else {
+            previousDirection = direction;
+
+            if(p.keyCode === p.UP_ARROW) {
+                if(previousDirection != "down") {
+                    direction = "up";
+                    console.log(direction);
+                }
+            }
+            if(p.keyCode === p.LEFT_ARROW) {
+                if(previousDirection != "right") {
+                    direction = "left";
+                    console.log(direction);
+                }
+            }
+            if(p.keyCode === p.RIGHT_ARROW) {
+                if(previousDirection != "left") {
+                    direction = "right";
+                    console.log(direction);
+                }
+            }
+            if(p.keyCode === p.DOWN_ARROW) {
+                if(previousDirection != "up") {
+                    direction = "down";
+                    console.log(direction);
+                }
+            }
         }
     }
 

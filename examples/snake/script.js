@@ -1,6 +1,6 @@
-const w = 1200;
-const h = 1200;
-const square = 100;
+const w = 700;
+const h = 700;
+const square = 25;
 const map = new Array(w/square);
 const foodmap = new Array(w/square);
 const background = [38,38,38];
@@ -13,9 +13,11 @@ let currentHead = [0,0];
 let snakeLength = 0;
 let gamePlaying = true;
 let snake = [];
-
+let frameRate = 20;
 let direction = "up";
+let canvas = null;
 let sketch = function(p) {
+    canvas = p;
     for(var i = 0; i<map.length; i++) {
         map[i] = new Array(h/square);
         foodmap[i] = new Array(h/square);
@@ -45,7 +47,7 @@ let sketch = function(p) {
         map[w/square/2][h/square/2] = true;
         snakeLength = 1;
 
-        p.frameRate(10);
+        p.frameRate(frameRate);
         createFood();
     }
 
@@ -55,6 +57,7 @@ let sketch = function(p) {
 
     let previousDirection = "down";
     p.draw = function() { 
+        p.frameRate(frameRate);
         const toHead = [];
         var temp1 = currentHead[0];
         var temp2 = currentHead[1];
@@ -178,6 +181,11 @@ let sketch = function(p) {
             p.square(wRandom, hRandom, square);
         }
     }
+}
+
+function changeFrameRate() {
+    frameRate = parseInt(document.getElementById('frames').value);
+    canvas.frameRate(frameRate);
 }
 
 $(document).ready(function() {

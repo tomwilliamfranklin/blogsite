@@ -83,7 +83,8 @@ let sketch = function(p) {
                 }    
                 }  else {
                     endGame();
-                }                
+                }        
+                setScore();        
         p.updatePixels();
     }
 
@@ -186,6 +187,15 @@ let sketch = function(p) {
 function changeFrameRate() {
     frameRate = parseInt(document.getElementById('frames').value);
     canvas.frameRate(frameRate);
+}
+
+function resetFunc() {
+    frameRate = parseInt(document.getElementById('frames').value);
+    canvas.frameRate(frameRate);
+}
+
+function setScore() {
+    document.getElementById('score').innerHTML = snakeLength;
 }
 
 $(document).ready(function() {

@@ -12,6 +12,7 @@ const dead = [166, 45, 45];
 let currentHead = [0,0];
 let snakeLength = 0;
 let gamePlaying = true;
+let snake = [];
 
 let direction = "up";
 let sketch = function(p) {
@@ -21,7 +22,7 @@ let sketch = function(p) {
     }
 
     p.setup = function() {
-        snakeLength = 0;
+        snake = [];
         direction = "up";
         const wrandom = Math.floor(Math.random() * (w/square));
         const hrandom = Math.floor(Math.random() * (h/square));
@@ -52,7 +53,6 @@ let sketch = function(p) {
     left:[ -1, 0],          right:[ +1, 0],
                 down:[0, +1]};
 
-    const snake = [];
     let previousDirection = "down";
     p.draw = function() { 
         const toHead = [];

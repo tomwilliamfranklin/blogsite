@@ -847,6 +847,44 @@ a:hover {
   .main {
     margin-left: unset;
   }
+  .blog-post-item-summary {
+    width:345px;
+    margin:auto;
+  }
+  .blog-post-item {
+    display:flex;
+    flex-direction: column-reverse;
+    border-top: .5px solid #dbdbdb;
+    border-bottom: .5px solid #dbdbdb;
+    padding-right: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width:100%;
+  }
+  .blog-post-item-title {
+    h2 {
+      text-align: center;
+    }
+  }
+  .blog-post-item-date {
+    h2 {
+      text-align: center;
+    }
+  }
+  .blog-post-item-summary {
+    h2 {
+      text-align: center;
+    }
+  }
+  .blog-post-item-text {
+    text-align:center;
+  }
+  .blog-post-item-image {
+    .gatsby-image-wrapper {
+      width:200px !important;
+      height:200px !important;
+    }
+  }
 }
 
 @media screen and (max-width: 1270px) {
@@ -935,7 +973,7 @@ a:hover {
   }
 
   .contents-section {
-
+    padding-right:0;
     padding-left:0;
   }
 

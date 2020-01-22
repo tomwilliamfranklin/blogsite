@@ -1030,17 +1030,12 @@ a:hover {
     font-size: 16px;
   }
 
-  .blog-post-item-date {
-    h2 {
-      width:50%;
-    }
-  }
+  .blog-post-item-summary {
+    width: 100%;
+}
 
   .blog-post-item-summary {
     justify-content:unset;
-    h2 {
-      width:50%;
-    }
   }
 
   .title-section__inner-container {

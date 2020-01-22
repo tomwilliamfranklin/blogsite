@@ -9,9 +9,22 @@
 <meta charset='utf-8' />
 </head>
     <body>
-        <div class="canvas-container" id="container">
-
-        </div>
-    <script src='script.js'></script>
+        <div class="overall-container">
+            <div class="toolbar">
+                <p>Score</p><p id="score"></p>
+                <div><p>FrameRate:</p><input value="30"  step="1" type="number" id="frames" onkeyup="changeFrameRate()"></input></div>
+                <button class="btn" style="width:100px;"onclick="canvas.setup()">Restart</button>
+                <button class="btn" style="width:100px;"onclick="canvas.frameRate(0)">Stop</button>
+            </div>
+            <div class="canvas-container" id="container">
+        
+            </div>
+            <script src='script.js'>
+            </script>
+                <div class="scoreboard-container">
+                    <div class="score" id="scoreboard">
+                    </div>
+                </div>
+            </div>
     </body>
 </html>

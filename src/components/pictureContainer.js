@@ -3,8 +3,9 @@ import React from "react"
 import Helmet from "react-helmet"
 import { withPrefix, Link } from "gatsby"
 import SocialMedias from "../components/socialmedias"
-
-const pictureContainer = ({ siteTitle }) => (
+import Img from "gatsby-image"
+import { graphql } from "gatsby"
+const pictureContainer = ({ data }) =>  { return (
 <div>
 <Helmet>
 <script src={withPrefix('fading.js')}  type="text/javascript" ></script>
@@ -12,6 +13,7 @@ const pictureContainer = ({ siteTitle }) => (
   <section class="picture-section">
       <div class="colorbackground-fixed"/>
       <div class="background-fixed"/>
+      {/* <Img style={{margin:'auto'}}fluid={data.file.childImageSharp.fluid}/> */}
       <div class="picture-section__inner">
         <div class="picture-section-container">
           <h1>Tom Franklin</h1>
@@ -23,5 +25,16 @@ const pictureContainer = ({ siteTitle }) => (
 </section>
 </div>
 )
-
+}
+export const query = graphql`
+  query {
+    file(relativePath: { eq: "images/default.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 400) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+  `
 export default pictureContainer

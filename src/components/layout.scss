@@ -220,6 +220,10 @@ a:hover {
   -webkit-text-fill-color: white; /* Will override color (regardless of order) */
   padding:5px;
   text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+  img {
+    height:50px;
+    color:#eee;
+  }
 }
 
 .picture-section-icons-container a:hover {
@@ -680,6 +684,8 @@ a:hover {
   background-color:inherit;
   justify-content: center;
   flex-wrap:wrap;
+  max-width: 1080px;
+  margin: auto;
 }
 
 .blog-post-item-imagecontainer {

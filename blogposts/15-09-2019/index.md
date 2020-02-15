@@ -2,7 +2,7 @@
 path: '/CellAutomata'
 title: 'Cellular Automata'
 date: "2019-12-20"
-image: './ca2.jpg'
+image: './empires.png'
 tags: [JavaScript, p5.js]
 published: true
 context: "A Personal Project"
@@ -28,7 +28,7 @@ After developing a working version of Conway's game of life, I decided to try an
 Next I decided to try something a bit more challenging, develop my own cellular automata, inspired by the YouTuber [Hopson](https://www.youtube.com/watch?v=t73z0fzxMlE&t) I wanted to create an empires cellular automata, where teams of cells compete to be the last team standing on a world map. This would involve my own set of rules for each cell. First I had to actually get the cells to populate the map, so I set up an array for every single cell on the map along with an array with every single land cell on the map (By scanning the image for cells with the colour Green). Then I used both these arrays to set it so when a cell is next to a empty land tile, it will populate it with a cell of its own team. Once a bunch of cells from one team bumped into another team they came to a standstill, which is exactly what I wanted, because it means it recognised that the enemy cells were not empty pieces of land, as seen below.
 
 [[imageout]]
-| ![something](./teams.gif "image-inline maxwidth")Screenshot of the teams in action
+| ![something](./teams.gif "image-inline maxwidth")Gif of the teams in action
 
 Next I had to add combat, and this took the longest time, not because the difficulty of the code but more because I had no idea how to create a balanced combat system where one team couldn't just conquer the entire map as soon as they had got going, first I tried to get them to fight on an equal playing field..
 
@@ -40,10 +40,11 @@ This ended up looking more like a animated Piet Mondrian art piece than an empir
 [[imageout]]
 |![attempt2](./attempt2.gif "image-outline") You guys are meant to fight.. not this
 
-[[image]]
-| ![final](./empires.png "image-inline")Lovely screenshot of the end result
+What was going wrong this time? Well for starters instead of replacing the enemy cells upon winning a battle, i was lazily reusing a "kill" function from earlier in development, which replacland with empty land, allowing either team to refill it. This wasn't the only issue, it seemed as if neither team could ever win due to the balance of the dice system. So I decided I needed a few more elements, first was "Age" where each frame every cell would increase in age by one, if their age reached about 50, they rolled a dice of their age, if it landed above 50, they died. I didn't want this to be an absolute as it caused a mexican wave of deaths, with cells of 50 all dying at the same time (did not seem very natural). Further I made the fighting a bit more one sided, as well as the dice and their health, the overall cell count of the team would be taken into account, divided by 100,000 (It just works..) I had to also increase the dice to around 10000 for good measure, and the end result can be seen in the lovely example below.
 
-What was going wrong this time? Well for starters instead of replacing the enemy cells upon winning a battle, i was lazily reusing a "kill" function from earlier in development, which replaced the land with empty land, allowing either team to refill it. This wasn't the only issue, it seemed as if neither team could ever win due to the balance of the dice system. So I decided I needed a few more elements, first was "Age" where each frame every cell would increase in age by one, if their age reached about 50, they rolled a dice of their age, if it landed above 50, they died. I didn't want this to be an absolute as it caused a mexican wave of deaths, with cells of 50 all dying at the same time (did not seem very natural). Further I made the fighting a bit more one sided, as well as the dice and their health, the overall cell count of the team would be taken into account, divided by 100,000 (It just works..) I had to also increase the dice to around 10000 for good measure, and the end result can be seen in the lovely example below
+[[imagefull]]
+| ![final](./empires.png "image-inline")The end result.
+
 
 [[button]]
 | [View the final version here](/examples/empires/empires.html)

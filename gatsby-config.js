@@ -91,6 +91,9 @@ module.exports = {
                 image: {
                   classes: "blog-page-image",
                 },
+                imagefull: {
+                  classes: "blog-page-image-out",
+                },
                 imageout: {
                   classes: "image-out-of-line",
                 },

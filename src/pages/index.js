@@ -174,7 +174,7 @@ query indexQuery {
   blogs: allMarkdownRemark(
     limit:10 
     filter: { fileAbsolutePath: {regex : "\/blogposts/"}, frontmatter: { published: {eq: true} } }
-    sort:{fields: [frontmatter___title] order:DESC}
+    sort:{fields: [frontmatter___title] order:ASC}
   
     ) {
       edges {

@@ -2,7 +2,7 @@
 path: '/CellAutomata'
 title: 'Cellular Automata'
 date: "2019-12-20"
-image: './empires.png'
+image: './ca3.png'
 tags: [JavaScript, p5.js]
 published: true
 context: "A Personal Project"

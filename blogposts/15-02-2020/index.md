@@ -4,7 +4,7 @@ title: 'Attempting to make a snake AI'
 date: "2020-02-15"
 image: './ca2.jpg'
 tags: [JavaScript, p5.js]
-published: false
+published: true
 context: "A Personal Project"
 summary: ""
 inprogress: true
@@ -16,3 +16,8 @@ To begin trying to make a Snake AI, I figured I first needed to make snake; whic
 
 [[button]]
 | [Play it here](/examples/snake/index.html)
+
+
+
+[[button]]
+| [Run the pathing AI here](/examples/snake-ai/index.html)

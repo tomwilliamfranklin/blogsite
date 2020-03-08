@@ -10,8 +10,6 @@ summary: "Over the last few weeks I have spent time looking at Cellular Automati
 inprogress: true
 ---
 
-####This post is in ongoing development! Some parts may seem incomplete.
-
 ###Cellular automaton is the process of a group of "cells" in a grid which develop through linear time steps.The evolution of these cells are based on rules which are applied in relation to the state of the cells surronding neighbours.
 
 Over the last few weeks I have spent time looking at Cellular Automation, as it looked like a fasinating idea which can both produce beautiful patterns and improve my overall knowledge of the algorithms involved. A popular example of Cellular Automation was [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) also known as just the "Game of Life" due to comparisons on how the cells live and die based on under/over population. I felt this would be a good first step into the realm of the subject so I decided to try and replicate it. The outcome was a successful application built using just Javascript and a library known as [p5.js](https://p5js.org/) which provides functionality for drawing on html canvas'. A convinent iframe displaying my iteration of this can be seen below. 

@@ -17,7 +17,7 @@ To begin trying to make a Snake AI, I figured I first needed to make snake; whic
 [[button]]
 | [Play it here](/examples/snake/index.html)
 
-
+Snake pathing AI can be found here:
 
 [[button]]
 | [Run the pathing AI here](/examples/snake-ai/index.html)

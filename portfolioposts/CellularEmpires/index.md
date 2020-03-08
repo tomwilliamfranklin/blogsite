@@ -5,7 +5,7 @@ date: "2019-12-20"
 image: './empires.png'
 tags: [JavaScript, p5.js, Algorithms]
 published: true
-context: "A De Montfort University Project"
+context: "A Personal Project"
 summary: "This is a summary! "
 ---
 ###The "Empires" game is a cellular automata where a specified amount of teams spawn on a canvas containing an image of the world. The goal is for one team to conquer the other teams of their continent to become the last empire standing. 

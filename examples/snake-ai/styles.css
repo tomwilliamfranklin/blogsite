@@ -167,12 +167,27 @@
     display:flex;
     padding-top:10px;
   }
-  
+
   .warning {
     text-align: center;
   }
 
   .warning > p {
+    color: #b00020;
+    border: 1px solid #b00020;
+    width:fit-content;
+    margin:auto;
+    padding:10px;
+    margin-top:40px;
+    border-radius: 5px;
+  }
+ 
+  .thoughts {
+    text-align: center;
+  }
+
+  .thoughts > p {
+    color: #2ecc71;
     border: 1px solid #2ecc71;
     width:fit-content;
     margin:auto;

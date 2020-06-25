@@ -33,7 +33,9 @@ const IndexPage = ({data}) => (
         <div class="skills-container-item">
             <img class="icon1"src={icondata}/>
             <h3>Server-side Development</h3>
-            <p>I am experienced in setting up and problem solving various Stored Procedures and Relational Databases.</p>
+            <p>Developing and maintaining SQL Queries, Stored Procedures and Relational Databases in SQL.
+            <br></br> 
+            </p>
             <h4>Server-side Technologies</h4>
             <p>
               SQL Server 2019
@@ -43,48 +45,40 @@ const IndexPage = ({data}) => (
               BASH Terminal
               <br/>
               PuTTY
+              <br/>
+              Git
             </p>
           </div>
           <div class="skills-container-item">
             <img class="icon1" src={iconcogs}/>
             <h3>Back-end Development</h3>
-            <p>I love to develop and problem solve various backend projects, from an MVC setup to a API. </p>
+            <p>Building and maintaining .NET Core APIs in C# to producing software applications in Java. </p>
             <h4>Back-end Skills & Tools</h4>
             <p>
-              .NET Core 2.2
-              <br/>
-              Java 
+              .NET Core
               <br/>
               C#
               <br/>
-              Visual Studio 2017
-              <br/>
-              IntelliJ IDEA
+              Java
             </p>
           </div>
           <div class="skills-container-item">
             <img class="icon1" src={iconhtml}/>
             <h3>Front-End Development</h3>
-            <p>I love to develop websites from scratch and tinker with new technologies in a constantly developing landscape. 
-            <br></br> 
+            <p> Producing and maintaining web based applications for clients in Angular and JavaScript Node.
+            <br></br><br></br>
             </p>
             <h4>Front-End Technologies</h4>
             <p>
-              VSCode
+              TypeScript
               <br/>
-              JQuery
-              <br/>
-              GatsbyJS
+              JavaScript
               <br/>
               SCSS
               <br/>
               Angular
-              <br/>
-              React
               <br />
-              Gitlab
-              <br />
-              Github
+              GatsbyJS
             </p>
           </div>
         </div>
@@ -94,11 +88,11 @@ const IndexPage = ({data}) => (
     <section class="contents-section blogposts">
       <div class="contents-section__inner">
         <div style={{paddingTop: "75px"}} id="portfolio" class="contents-title-container">
-          <h2>Portfolio</h2>
+          <h2>Recent Personal Projects</h2>
         </div>
         <div class="contents-text-container centered">
         <p>
-          In my own time I love to get upto my own projects, and I love the challenge which comes with building my own applications.
+          Heres are some of the projects I have recently developed. 
           <br/>
         </p>
         </div>

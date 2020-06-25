@@ -6,43 +6,47 @@ image: './ca3.png'
 tags: [JavaScript, p5.js]
 published: true
 context: "A Personal Project"
-summary: "Over the last few weeks I have spent time looking at Cellular Automation, as it looked like a fasinating idea which can both produce beautiful patterns and improve my overall knowledge of the algorithms involved."
+summary: "Deciding to research Cellular Automata and see what kind of automations I can conjure up. Starting with Conway's Game of Life and ending with Cellular Automata Empires"
 inprogress: true
 ---
 
-###Cellular automaton is the process of a group of "cells" in a grid which develop through linear time steps.The evolution of these cells are based on rules which are applied in relation to the state of the cells surronding neighbours.
+Back during my University days, during my lessons of data structures, I was introduced to two dimensional arrays and for whatever reason I was intrigued, I thought why stop at two? Are there three? Four? Ten? It's a subject that really appealed to me. I wanted to explore it further, but my coding abilities back then were limited to Java and maybe a bit of C. So my first attempt at anything using a two dimensional array, a rendition of Game Of Life in Java - ended up having some of the worst memory leakage you’d ever see, to a point where that github repository is going to forever be placed in private. However I have decided to have another crack at it, this time actually researching and delving into the subject of ***Cellular Automata***.
 
-Over the last few weeks I have spent time looking at Cellular Automation, as it looked like a fasinating idea which can both produce beautiful patterns and improve my overall knowledge of the algorithms involved. A popular example of Cellular Automation was [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) also known as just the "Game of Life" due to comparisons on how the cells live and die based on under/over population. I felt this would be a good first step into the realm of the subject so I decided to try and replicate it. The outcome was a successful application built using just Javascript and a library known as [p5.js](https://p5js.org/) which provides functionality for drawing on html canvas'. A convinent iframe displaying my iteration of this can be seen below. 
+First I picked my language - this time opting for JavaScript due to recently having the luxury of using it to build my portfolio site. Next I had to decide how I was going to draw the cellular automations I was about to conjure up, to which I found the youtube channel [Coding Train](https://www.youtube.com/watch?v=FWSR_7kZuYg), who suggested the library [p5.js](https://p5js.org/); A javascript library used for manipulating HTML Canvas’. Using this, along with a number of video examples, coding train’s which were linked earlier as well as the YouTuber [Hopson](https://www.youtube.com/watch?v=WVCM3Rv4VV8) I was able to create my own rendition of Conway’s Game of Life, this time with no memory leakage!
 
 #####Click "Start" on the examples to run them. 
 <iframe class="exampleContainer" src="/examples/conwaysgameoflife/ConwaysGameOfLife.html" width="800" height="600"></iframe>
 
-After developing a working version of Conway's game of life, I decided to try and develop "Wolfram's Elementary Cellular Automaton" dubbed the simplest one-dimensional cellular automation there is; Due to the fact that each cell only looks at two neigbours, its left and right. Despite this definition many cool looking patterns can be made, and as seen in the example below, I have implemented several "rules" defined on [Wolfram maths website](http://mathworld.wolfram.com/ElementaryCellularAutomaton.html). These rules are simply 8 binary digits indicating whether cell is alive or dead. While I suggest you read up on the rules via the wolfram site link provided, the result is as seen below. 
+
+After this I decided I didn’t want to stop, I mean I was having too much fun and decided to have a crack at “Wolfram’s Elementary Cellular Automaton”. Which was actually a backwards step in terms of skill level, due to the fact that each cell only changes its state based on two of its neighbours, rather than in Game of Life where the cell is looking at all 8 of its neighbours. 
 
 #####You can switch the rule using the dropdown at the top of the example.
 <iframe class="exampleContainer" src="/examples/wolframs/Wolframs.html" width="800" height="600"></iframe>
 
-
-Next I decided to try something a bit more challenging, develop my own cellular automata, inspired by the YouTuber [Hopson](https://www.youtube.com/watch?v=t73z0fzxMlE&t) I wanted to create an empires cellular automata, where teams of cells compete to be the last team standing on a world map. This would involve my own set of rules for each cell. First I had to actually get the cells to populate the map, so I set up an array for every single cell on the map along with an array with every single land cell on the map (By scanning the image for cells with the colour Green). Then I used both these arrays to set it so when a cell is next to a empty land tile, it will populate it with a cell of its own team. Once a bunch of cells from one team bumped into another team they came to a standstill, which is exactly what I wanted, because it means it recognised that the enemy cells were not empty pieces of land, as seen below.
+Now these two had been made, I wanted to finish off this little research project with my own thing, something which wasn’t following an already established set of rules. So I decided to take inspiration from the youtuber [Hopson](https://www.youtube.com/watch?v=t73z0fzxMlE&t) once again, and develop a cellular automata of a world map, where team’s would randomly spawn on the map and then attempt to be the last team standing.
 
 [[imageout]]
 | ![something](./teams.gif "image-inline maxwidth")Gif of the teams in action
 
-Next I had to add combat, and this took the longest time, not because the difficulty of the code but more because I had no idea how to create a balanced combat system where one team couldn't just conquer the entire map as soon as they had got going, first I tried to get them to fight on an equal playing field..
+Each team would only spawn on green pixels and would begin with a set amount of health. However as they reproduced to neighbouring cells they would gain a chance to increase or decrease in health. Once they came into contact with an enemy cell, they would fight and whoever had the highest health + the luckiest dice roll would proceed to win the battle, spreading to the enemies cell. 
+
+I made my first initial mistake when implementing the health system. Each team's cells were sharing the same pool of health, rather than inheriting and having their own health pools. This was due to referencing the same variable (whoops). It caused a hilarious animated Piet Modrian art piece though: 
 
 [[imageout]]
 |![attempt1](./attempt1.gif "image-outline")The first attempt didn't fair so well...
 
-This ended up looking more like a animated Piet Mondrian art piece than an empires automation, and something didn't feel right, it was as if all the cells had the same health... which they did. I accidently had set the new "child" cells health as a direct pointer to the parents health, rather than creating a new one. Not only that but it felt like I needed to give more chance in whether they win or lose, more than just "if health is bigger, kill" and as such I added a random number from 1 - 6 which would add to the cells health divided 100 (Cells health would go up in 100s), this lead to the teams living in harmony
+
+After fixing this the original take on this worked okay, but no team ended up winning unless they managed to luck out, causing an endless struggle of warfare; this wasn’t necessarily bad but I really wanted to see a team win - so I added a mechanic where the size of the team was taken into account. 
 
 [[imageout]]
 |![attempt2](./attempt2.gif "image-outline") You guys are meant to fight.. not this
 
-What was going wrong this time? Well for starters instead of replacing the enemy cells upon winning a battle, i was lazily reusing a "kill" function from earlier in development, which replacland with empty land, allowing either team to refill it. This wasn't the only issue, it seemed as if neither team could ever win due to the balance of the dice system. So I decided I needed a few more elements, first was "Age" where each frame every cell would increase in age by one, if their age reached about 50, they rolled a dice of their age, if it landed above 50, they died. I didn't want this to be an absolute as it caused a mexican wave of deaths, with cells of 50 all dying at the same time (did not seem very natural). Further I made the fighting a bit more one sided, as well as the dice and their health, the overall cell count of the team would be taken into account, divided by 100,000 (It just works..) I had to also increase the dice to around 10000 for good measure, and the end result can be seen in the lovely example below.
+After adding the landslide victory mechanic, I decided some users may want to experience some alternate scenarios, where the size of the country doesn’t matter or where the countries would change colour every time they evolved. I also implemented multiple different buttons etc for better control of the simulation, polished some styling here and there, and decided to call it a day.
 
 [[imagefull]]
 | ![final](./empires.png "image-inline")The end result.
 
+Due to making it all in Javascript, you can run the scenario yourself through the button below.
 
 [[button]]
 | [View the final version here](/examples/empires/empires.html)

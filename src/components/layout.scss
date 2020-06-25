@@ -696,7 +696,6 @@ a:hover {
   display:flex;
   flex-direction:row;
   overflow:hidden;
-  margin: 15px;
   position:relative;
   transition: 0.3s;
 }
@@ -890,6 +889,10 @@ a:hover {
       height:200px !important;
     }
   }
+}
+
+.blog-post-item-text {
+  margin:20px;
 }
 
 @media screen and (max-width: 1270px) {

@@ -35,8 +35,11 @@ const Layout = ({ children }) => {
     <script src={withPrefix('navigation.js')}  type="text/javascript" ></script>
     <script src={withPrefix('fading.js')}  type="text/javascript" ></script>
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet"></link>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171511496-1"></script>
+    <script src={withPrefix('startup.js')}  type="text/javascript" ></script>
     </Helmet>
     <Header></Header>
+    
      <div class="mainContainer">
         <main class="main">
           {children}
